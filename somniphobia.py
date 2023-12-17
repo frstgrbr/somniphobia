@@ -3,13 +3,17 @@ import time
 import platform
 import subprocess
 
-# Function to move the mouse cursor
+# Function to move the mouse cursor with a random offset
 def move_mouse():
     # Get the current mouse position
     x, y = pyautogui.position()
 
-    # Move the mouse cursor slightly to simulate activity
-    pyautogui.moveTo(x + 1, y)
+    # Calculate a random offset within a certain range
+    offset_x = random.randint(-10, 10)
+    offset_y = random.randint(-10, 10)
+
+    # Move the mouse cursor with the calculated offset
+    pyautogui.moveTo(x + offset_x, y + offset_y)
 
 # Function to prevent the computer from going to sleep (Windows)
 def prevent_sleep_windows():
