@@ -61,6 +61,8 @@ try:
     while True:
         move_mouse()
         prevent_sleep()
-        time.sleep(20)  # Adjust the sleep interval as needed
+        # Randomize the time interval between mouse movements (between 10 and 30 seconds)
+        sleep_interval = random.uniform(10, 30)
+        time.sleep(sleep_interval)
 except KeyboardInterrupt:
     print("Mouse jiggling and sleep prevention stopped.")
