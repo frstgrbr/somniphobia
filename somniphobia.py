@@ -2,6 +2,7 @@ import pyautogui
 import time
 import platform
 import subprocess
+import random
 
 # Function to move the mouse cursor with a random offset
 def move_mouse():
