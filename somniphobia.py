@@ -12,8 +12,15 @@ def move_mouse():
     offset_x = random.randint(-10, 10)
     offset_y = random.randint(-10, 10)
 
-    # Move the mouse cursor with the calculated offset
-    pyautogui.moveTo(x + offset_x, y + offset_y)
+    # Get screen width and height
+    screen_width, screen_height = pyautogui.size()
+
+    # Adjust the cursor position, avoiding the screen edges
+    new_x = max(min(x + offset_x, screen_width - 1), 0)
+    new_y = max(min(y + offset_y, screen_height - 1), 0)
+
+    # Move the mouse cursor with the adjusted position
+    pyautogui.moveTo(new_x, new_y)
 
 # Function to prevent the computer from going to sleep (Windows)
 def prevent_sleep_windows():
